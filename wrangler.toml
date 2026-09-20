@@ -1,0 +1,5 @@
+name = "aura-weird"
+compatibility_date = "2026-09-19"
+
+[assets]
+directory = "."

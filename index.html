@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>AURA WEIRD — How weird is it?</title>
+  <meta name="description" content="Do weird things. Gain aura. Vote on weird habits and discover you're not the only one." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><span>aura</span><strong>weird</strong></a>
+    <button class="pill" onclick="document.querySelector('#confess').scrollIntoView({behavior:'smooth'})">confess yours</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="ghost" aria-hidden="true">
+        <div class="crown">♕</div>
+        <div class="face">✦ &nbsp; ✦<br><span>◡</span></div>
+      </div>
+      <p class="eyebrow">THE INTERNET'S WEIRDNESS CHECK</p>
+      <h1>HOW WEIRD<br><em>IS IT?</em></h1>
+      <p class="lead">Post the weird little things you do.<br>Let the weirdos decide your aura.</p>
+      <a class="cta" href="#vote">START JUDGING →</a>
+      <p class="rule">JUDGE THE THING. NOT THE PERSON.</p>
+    </section>
+
+    <section id="vote" class="feed">
+      <div class="section-title"><span>WEIRD #00001</span><span>LIVE TEST</span></div>
+      <article class="card">
+        <p class="confession">“I rehearse my order before it’s my turn.”</p>
+        <div class="score">
+          <div><b id="weirdScore">72%</b><small>WEIRD</small></div>
+          <div><b id="auraScore">+2,840</b><small>AURA</small></div>
+        </div>
+        <div class="buttons">
+          <button onclick="voteWeird(this)">WEIRD</button>
+          <button onclick="voteAura(1)">+ AURA</button>
+          <button onclick="voteAura(-1)">− AURA</button>
+        </div>
+        <button class="metoo" onclick="meToo(this)">ME TOO · <span>14,800</span></button>
+        <p class="spoken">THE WEIRDOS HAVE SPOKEN.</p>
+      </article>
+    </section>
+
+    <section id="confess" class="confess">
+      <p class="eyebrow">YOUR TURN</p>
+      <h2>DO SOMETHING<br><span>WEIRD.</span></h2>
+      <form onsubmit="submitConfession(event)">
+        <textarea id="confessionInput" maxlength="180" placeholder="I always..." required></textarea>
+        <div class="form-foot"><span id="count">0/180</span><button type="submit">CONFESS →</button></div>
+      </form>
+      <p id="thanks" class="thanks" hidden>CONFESSION RECEIVED 👻<br><small>Beta submissions stay on this device for now.</small></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span>aura</span><strong>weird</strong></div>
+    <p>DO WEIRD THINGS. GAIN AURA.</p>
+    <p class="muted">© 2026 AURA WEIRD · Beta</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
